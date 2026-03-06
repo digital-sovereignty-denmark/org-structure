@@ -1,5 +1,7 @@
 # Digital Sovereignty Denmark — Organisation Structure
 
+**Open collaboration for Denmark’s digital sovereignty**
+
 This repository defines the organisational structure, governance model, and
 configuration of the **Digital Sovereignty Denmark** GitHub organisation.
 
