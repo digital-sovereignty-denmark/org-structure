@@ -1,0 +1,81 @@
+# teams.yaml
+# Organisational team definitions for Digital Sovereignty Denmark
+# This file serves as the source of truth for team structure, purpose, and visibility.
+
+teams:
+
+  - name: organisation-meta
+    display_name: "Organisation & Meta"
+    description: >
+      Responsible for governance, organisational processes, repository structure,
+      policies, team definitions, and long-term roadmap across the Digital Sovereignty
+      Denmark GitHub organisation.
+    visibility: visible
+    notifications: enabled
+    responsibilities:
+      - Maintain org-level configuration (teams.yaml, repositories.yaml, permissions.yaml)
+      - Oversee governance, standards, and decision-making processes
+      - Manage CODEOWNERS of governance repositories
+      - Approve structural or organisational changes
+    maintainers: []
+    members: []
+
+  - name: knowledge-analysis
+    display_name: "Knowledge & Analysis"
+    description: >
+      Conducts research, dependency analyses, case studies, technology evaluations,
+      and produces analytical materials supporting digital sovereignty insights.
+    visibility: visible
+    notifications: enabled
+    responsibilities:
+      - Produce and maintain research summaries
+      - Create analyses of digital infrastructure and dependencies
+      - Document case studies and international comparisons
+      - Supply evidence-based inputs for policy and technical teams
+    maintainers: []
+    members: []
+
+  - name: tools-technical
+    display_name: "Tools & Technical Work"
+    description: >
+      Develops prototypes, scripts, infrastructure patterns, and technical guidance
+      relevant to open and sovereign digital ecosystems.
+    visibility: visible
+    notifications: enabled
+    responsibilities:
+      - Build prototypes and technical demos
+      - Evaluate open-source tools for sovereignty use cases
+      - Develop infrastructure and architectural patterns
+      - Produce best-practice guides and technical documentation
+    maintainers: []
+    members: []
+
+  - name: discussions-ideas
+    display_name: "Discussions & Ideas"
+    description: >
+      Facilitates community dialogue, future scenarios, whitepapers, standards proposals,
+      and policy-oriented discussions that shape the organisation's direction.
+    visibility: visible
+    notifications: enabled
+    responsibilities:
+      - Lead and document community discussions
+      - Write whitepapers and conceptual proposals
+      - Explore long-term scenarios and policy perspectives
+      - Support consensus-building and vision-setting
+    maintainers: []
+    members: []
+
+  - name: resource-collections
+    display_name: "Resource Collections"
+    description: >
+      Curates libraries of literature, datasets, reports, and external materials
+      relevant to digital sovereignty globally.
+    visibility: visible
+    notifications: enabled
+    responsibilities:
+      - Maintain curated lists of literature and external resources
+      - Organise datasets and high-quality references
+      - Track EU/global developments and public documents
+      - Provide informational foundations for other teams
+    maintainers: []
+    members: []
