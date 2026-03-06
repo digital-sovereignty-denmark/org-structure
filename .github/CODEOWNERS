@@ -1,2 +1,5 @@
-# Organisation governance repository
+# CODEOWNERS for the Digital Sovereignty Denmark organisation-structure repository
+# This file defines which team is responsible for reviewing and approving changes.
+
+# Assign ownership of the entire repo to the Organisation & Meta team
 * @Digital-Sovereignty-Denmark/organisation-meta
