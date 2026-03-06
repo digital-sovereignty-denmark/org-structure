@@ -1,0 +1,248 @@
+# permissions.yaml
+# Source of truth for team-to-repo access, default policies, and branch protections
+# for the Digital Sovereignty Denmark GitHub organisation.
+
+version: 1
+
+# -----------------------------------------------------------------------------
+# 1) Defaults — sensible org-wide policies you can apply to most repos
+# -----------------------------------------------------------------------------
+defaults:
+  # Suggested baseline: transparent and contributor-friendly, but safe
+  team_permissions:
+    organisation-meta: read         # Org/meta team can read all repos by default
+    knowledge-analysis: read
+    tools-technical: read
+    discussions-ideas: read
+    resource-collections: read
+
+  # Default repository settings when creating NEW repos (override per repo below)
+  repository_settings:
+    visibility: public              # Default to public to maximize transparency
+    allow_merge_commit: true
+    allow_squash_merge: true
+    allow_rebase_merge: false
+    delete_branch_on_merge: true
+    enable_discussions: true
+    enable_wiki: false
+    enable_projects: false
+    enable_issues: true
+    default_branch: main
+    require_signed_commits: false   # Can be tightened later if desired
+
+  # Default branch protection (lightweight baseline)
+  branch_protection:
+    # Applies to the default branch unless overridden per repo
+    required_status_checks:
+      strict: true
+      contexts: []                  # Add CI job names here when you introduce CI
+    enforce_admins: true
+    required_pull_request_reviews:
+      required_approving_review_count: 1
+      require_code_owner_reviews: false
+      dismiss_stale_reviews: true
+      require_last_push_approval: false
+    restrictions:                   # No push restrictions by default
+      users: []
+      teams: []
+    allow_force_pushes: false
+    allow_deletions: false
+    block_creations: false
+    require_linear_history: false   # Can enable later if you want pristine history
+
+# -----------------------------------------------------------------------------
+# 2) Repository-specific rules — override the defaults for specific repos
+# -----------------------------------------------------------------------------
+repositories:
+
+  # Governance backbone repository (this repo)
+  org-structure:
+    team_permissions:
+      organisation-meta: admin      # Org/Meta owns this repo
+      knowledge-analysis: read
+      tools-technical: read
+      discussions-ideas: read
+      resource-collections: read
+
+    repository_settings:
+      visibility: public
+      enable_issues: true
+      enable_discussions: true
+      enable_wiki: false
+      allow_merge_commit: true
+      allow_squash_merge: true
+      allow_rebase_merge: false
+      delete_branch_on_merge: true
+      default_branch: main
+      require_signed_commits: false
+
+    branch_protection:
+      required_status_checks:
+        strict: true
+        contexts: []                # Add YAML validation CI job name when added
+      enforce_admins: true
+      required_pull_request_reviews:
+        required_approving_review_count: 1
+        require_code_owner_reviews: true   # Enforce CODEOWNERS reviews here
+        dismiss_stale_reviews: true
+        require_last_push_approval: false
+      restrictions:
+        users: []
+        teams: []                   # Keep open; CODEOWNERS + reviews provide control
+      allow_force_pushes: false
+      allow_deletions: false
+      block_creations: false
+      require_linear_history: true  # Cleaner history for governance changes
+
+  # Examples for future repos you’re likely to add; keep these as templates and copy.
+  analysis-dependencies-state-of-denmark:
+    team_permissions:
+      organisation-meta: maintain
+      knowledge-analysis: maintain  # Primary owners
+      tools-technical: read
+      discussions-ideas: read
+      resource-collections: read
+    repository_settings:
+      visibility: public
+      enable_discussions: true
+      enable_wiki: false
+      allow_merge_commit: true
+      allow_squash_merge: true
+      allow_rebase_merge: false
+      delete_branch_on_merge: true
+      default_branch: main
+    branch_protection:
+      required_status_checks:
+        strict: true
+        contexts: []
+      enforce_admins: true
+      required_pull_request_reviews:
+        required_approving_review_count: 1
+        require_code_owner_reviews: true
+        dismiss_stale_reviews: true
+      restrictions:
+        users: []
+        teams: []
+      allow_force_pushes: false
+      allow_deletions: false
+      require_linear_history: false
+
+  tech-infrastructure-patterns:
+    team_permissions:
+      organisation-meta: maintain
+      tools-technical: admin        # Primary owners
+      knowledge-analysis: read
+      discussions-ideas: read
+      resource-collections: read
+    repository_settings:
+      visibility: public
+      enable_issues: true
+      enable_discussions: true
+      enable_wiki: false
+      allow_merge_commit: true
+      allow_squash_merge: true
+      allow_rebase_merge: false
+      delete_branch_on_merge: true
+      default_branch: main
+    branch_protection:
+      required_status_checks:
+        strict: true
+        contexts: []
+      enforce_admins: true
+      required_pull_request_reviews:
+        required_approving_review_count: 1
+        require_code_owner_reviews: true
+        dismiss_stale_reviews: true
+      restrictions:
+        users: []
+        teams: []
+      allow_force_pushes: false
+      allow_deletions: false
+      require_linear_history: false
+
+  community-whitepapers:
+    team_permissions:
+      organisation-meta: maintain
+      discussions-ideas: admin      # Primary owners
+      knowledge-analysis: read
+      tools-technical: read
+      resource-collections: read
+    repository_settings:
+      visibility: public
+      enable_issues: true
+      enable_discussions: true
+      enable_wiki: false
+      allow_merge_commit: true
+      allow_squash_merge: true
+      allow_rebase_merge: false
+      delete_branch_on_merge: true
+      default_branch: main
+    branch_protection:
+      required_status_checks:
+        strict: true
+        contexts: []
+      enforce_admins: true
+      required_pull_request_reviews:
+        required_approving_review_count: 1
+        require_code_owner_reviews: true
+        dismiss_stale_reviews: true
+      restrictions:
+        users: []
+        teams: []
+      allow_force_pushes: false
+      allow_deletions: false
+      require_linear_history: false
+
+  resources-literature:
+    team_permissions:
+      organisation-meta: maintain
+      resource-collections: admin   # Primary owners
+      knowledge-analysis: read
+      tools-technical: read
+      discussions-ideas: read
+    repository_settings:
+      visibility: public
+      enable_issues: true
+      enable_discussions: true
+      enable_wiki: false
+      allow_merge_commit: true
+      allow_squash_merge: true
+      allow_rebase_merge: false
+      delete_branch_on_merge: true
+      default_branch: main
+    branch_protection:
+      required_status_checks:
+        strict: false
+        contexts: []
+      enforce_admins: true
+      required_pull_request_reviews:
+        required_approving_review_count: 1
+        require_code_owner_reviews: false
+        dismiss_stale_reviews: true
+      restrictions:
+        users: []
+        teams: []
+      allow_force_pushes: false
+      allow_deletions: false
+      require_linear_history: false
+
+# -----------------------------------------------------------------------------
+# 3) Roles — optional: define a canonical mapping of abstract roles to GitHub perms
+# -----------------------------------------------------------------------------
+roles:
+  admin: admin
+  owner: admin
+  maintainer: maintain
+  write: push
+  triage: triage
+  read: pull
+
+# -----------------------------------------------------------------------------
+# 4) Notes for automation (non-functional, for humans/scripts)
+# -----------------------------------------------------------------------------
+notes:
+  - "Use team slugs (lowercase with hyphens) when automating (e.g., organisation-meta)."
+  - "When adding a new repo: copy a similar block from 'repositories' and adjust owners."
+  - "Enable 'Require review from Code Owners' on repos that manage policies/standards."
+  - "Add CI contexts under required_status_checks.contexts when you introduce validation."
+  - "Keep CODEOWNERS aligned with the team that has admin/maintain rights."
