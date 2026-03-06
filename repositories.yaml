@@ -1,0 +1,158 @@
+# repositories.yaml
+# Definition of repositories in the Digital Sovereignty Denmark GitHub organisation.
+# This file describes repository names, purposes, owners, and conventions.
+
+conventions:
+  naming:
+    prefixes:
+      org: "Organisation & Meta repositories (org-*)"
+      analysis: "Research and analytical work (analysis-*)"
+      tech: "Technical and tooling projects (tech-*)"
+      ideas: "Whitepapers, discussions, and conceptual documents (ideas-*)"
+      resources: "Resource collections and datasets (resources-*)"
+    guidelines:
+      - "Use lowercase with hyphens (-) for readability."
+      - "Keep names descriptive but concise."
+      - "Prefix repos based on their high-level category."
+      - "Each repo should have a clear, single purpose."
+
+  visibility:
+    default: public
+    rationale: >
+      Public visibility is preferred to support transparency, openness, and
+      community collaboration. Sensitive or experimental repos may be made
+      private when needed.
+
+repositories:
+
+  # ─────────────────────────────────────────────
+  # Organisation & Meta Repositories (org-*)
+  # ─────────────────────────────────────────────
+  - name: org-structure
+    description: >
+      Source of truth for organisational configuration, including team definitions,
+      repository list, permissions, and governance metadata.
+    visibility: public
+    owners:
+      teams:
+        - organisation-meta
+    topics:
+      - governance
+      - structure
+      - meta
+
+  # Placeholder for future organisation-level repos
+  # Examples:
+  # - name: org-governance
+  # - name: org-roadmap
+
+  # ─────────────────────────────────────────────
+  # Knowledge & Analysis Repositories (analysis-*)
+  # ─────────────────────────────────────────────
+  - name: analysis-dependencies
+    description: >
+      Analyses of digital infrastructure dependencies in Denmark and internationally,
+      identifying risks and sovereignty challenges.
+    visibility: public
+    owners:
+      teams:
+        - knowledge-analysis
+    topics:
+      - analysis
+      - dependencies
+      - research
+
+  - name: analysis-case-studies
+    description: >
+      Case studies of national and global digital sovereignty initiatives, strategies,
+      successes, and failures.
+    visibility: public
+    owners:
+      teams:
+        - knowledge-analysis
+    topics:
+      - analysis
+      - case-studies
+
+  # ─────────────────────────────────────────────
+  # Technical Work Repositories (tech-*)
+  # ─────────────────────────────────────────────
+  - name: tech-infrastructure-patterns
+    description: >
+      Infrastructure and architectural patterns for sovereign digital systems,
+      including deployment models, trust frameworks, and reference designs.
+    visibility: public
+    owners:
+      teams:
+        - tools-technical
+    topics:
+      - infrastructure
+      - architecture
+      - patterns
+
+  - name: tech-prototypes
+    description: >
+      A collection of small prototypes, scripts, and technical experiments related
+      to sovereign technologies and open-source tooling.
+    visibility: public
+    owners:
+      teams:
+        - tools-technical
+    topics:
+      - prototypes
+      - experimentation
+
+  # ─────────────────────────────────────────────
+  # Discussions & Ideas Repositories (ideas-*)
+  # ─────────────────────────────────────────────
+  - name: ideas-whitepapers
+    description: >
+      Drafts, concept notes, and whitepapers on digital sovereignty topics,
+      policy proposals, and future visions.
+    visibility: public
+    owners:
+      teams:
+        - discussions-ideas
+    topics:
+      - whitepapers
+      - policy
+      - ideas
+
+  - name: ideas-future-scenarios
+    description: >
+      Explorations of future digital sovereignty scenarios, long-term planning,
+      and speculative design work.
+    visibility: public
+    owners:
+      teams:
+        - discussions-ideas
+    topics:
+      - scenarios
+      - future
+
+  # ─────────────────────────────────────────────
+  # Resource Collections Repositories (resources-*)
+  # ─────────────────────────────────────────────
+  - name: resources-literature
+    description: >
+      Curated lists of reports, academic papers, books, and articles related to
+      digital sovereignty, open technologies, and public digital infrastructure.
+    visibility: public
+    owners:
+      teams:
+        - resource-collections
+    topics:
+      - resources
+      - literature
+
+  - name: resources-datasets
+    description: >
+      Public datasets that support digital sovereignty analyses, including EU
+      documents, ICT dependency data, and global digital infrastructure metrics.
+    visibility: public
+    owners:
+      teams:
+        - resource-collections
+    topics:
+      - datasets
+      - data
