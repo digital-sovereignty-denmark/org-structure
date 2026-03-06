@@ -45,9 +45,20 @@ Structural changes to the organisation *must* be proposed via pull request.
 ## 🔧 How to Propose a Change
 
 ### 1. Fork or branch this repository
-Create a feature branch for your proposed change:
+Create a feature branch for your proposed change. Use a descriptive name such as:
 
-git checkout -b update-structure-
+`git checkout -b update-structure-<short-description>`
+
+**Examples:**
+
+`git checkout -b update-structure-new-team`<br>
+`git checkout -b update-structure-permission-fix`<br>
+`git checkout -b update-structure-readme`<br>
+`git checkout -b update-structure-repo-rules`
+
+This naming convention helps keep the history readable, groups structural changes
+together, and supports future automation that may target branches beginning with
+`update-structure-`.
 
 ### 2. Edit the relevant YAML files
 - `teams.yaml` for team descriptions, responsibilities, visibility  
